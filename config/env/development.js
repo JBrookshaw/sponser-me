@@ -1,9 +1,9 @@
 'use strict';
 
 module.exports = {
-	db: 'mongodb://localhost/sponser-me-dev',
+	db: 'mongodb://quazzy:password@ds031681.mongolab.com:31681/sponserme',
 	app: {
-		title: 'sponser-me - Development Environment'
+		title: 'Sponser Me'
 	},
 	facebook: {
 		clientID: process.env.FACEBOOK_ID || 'APP_ID',
