@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('search').controller('SearchController', ['$scope',
-	function($scope) {
-
+angular.module('search').controller('SearchController', ['$scope','Users',
+	function($scope, Users) {
+        $scope.users = Users.query();
 	}
 ]);

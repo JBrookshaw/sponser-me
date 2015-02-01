@@ -1,9 +1,13 @@
-<section class="jumbotron" data-ng-controller="SearchController">
+<section class="jumbotron project" data-ng-controller="SearchController">
 
     <div id="aboutUs">
-        <h1>About Us</h1>
+        <h1 ng-click="showDetails = ! showDetails">
+            <span ng-show="!showDetails" class="glyphicon glyphicon-menu-down"></span>
+            <span ng-show="showDetails" class="glyphicon glyphicon-menu-up"></span>
+            About Us</h1>
 
-        <p>
+        <p ng-show="showDetails">
+            <img src="\modules\core\img\sponsor.jpg">
             "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem
             aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
             architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut
@@ -15,12 +19,14 @@
             Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel
             illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
         </p>
-    </div>
-
+        </div>
     <div id="messageToUniverse">
-        <h1>Our Message to the Universe</h1>
-
-        <p>
+        <h1 ng-click="showDetails2 = ! showDetails2">
+            <span ng-show="!showDetails2" class="glyphicon glyphicon-menu-down"></span>
+            <span ng-show="showDetails2" class="glyphicon glyphicon-menu-up"></span>
+            Message To the Universe</h1>
+        <p ng-show="showDetails2">
+            <img src="\modules\core\img\icon-sponsorship.png">
             "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem
             aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
             architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut

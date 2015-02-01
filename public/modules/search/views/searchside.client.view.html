@@ -1,0 +1,11 @@
+<section data-ng-controller="SearchController">
+
+    Search: <input ng-model="query">
+
+    <ul>
+        <li ng-repeat="user in Users.query() | filter:query">
+            {{user.firstName}}&nbsp;{{user.lastName}}
+        </li>
+    </ul>
+    {{users[0].firstName}}
+</section>
