@@ -3,7 +3,7 @@
 module.exports = {
 	db: 'mongodb://quazzy:password@ds031681.mongolab.com:31681/sponserme',
 	app: {
-		title: 'Sponser Me'
+		title: 'Champion'
 	},
 	facebook: {
 		clientID: process.env.FACEBOOK_ID || 'APP_ID',
