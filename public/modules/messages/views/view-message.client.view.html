@@ -1,0 +1,20 @@
+<section data-ng-controller="MessagesController" data-ng-init="findOne()" style="margin:20px;">
+	<div class="page-header" style="padding-top: 20px;">
+		<h1 data-ng-bind="message.name"></h1>
+        From : <a data-ng-bind="message.user.displayName"></a><br />
+	</div>
+    <h4 data-ng-bind="message.content"></h4>
+	<small>
+		<em class="text-muted">
+			Posted on
+			<span data-ng-bind="message.created | date:'mediumDate'"></span>
+			by
+			<span data-ng-bind="message.user.displayName"></span>
+		</em>
+	</small>
+    <span style="float:right">
+    <a href="#!/messages/create" class="btn btn-large"><button class="btn btn-large"><i class="icon-pencil"></i> Reply</button></a>
+    <a href="#!/messages" class="btn btn-large" data-ng-click="remove();"><button class="btn btn-large"><i class="icon-remove"></i> Delete</button></a>
+    <a href="#!/messages" class="btn btn-large"><button class="btn btn-large"><i class="icon-arrow-left"></i> Back</button></a>
+    </span>
+</section>

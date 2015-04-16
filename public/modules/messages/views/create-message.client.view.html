@@ -1,0 +1,36 @@
+<section data-ng-controller="MessagesController" style="margin:20px;">
+    <div class="page-header" style="padding-top: 20px;">
+        <h1>New Message</h1>
+    </div>
+    <div class="col-md-12">
+        <form class="form-horizontal" data-ng-submit="create()" novalidate>
+            <fieldset>
+                <div class="form-group">
+                    <label class="control-label" for="name">Title</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="name" id="name" class="form-control" placeholder="Title" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="desuser">Destination User</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="desuser" id="desuser" class="form-control" placeholder="Destination User" required>
+                    </div>
+                </div>
+                <!-- eric -->
+                <div class="form-group">
+                    <label class="control-label" for="content">Message</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="content" id="content" class="form-control" placeholder="Message" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="submit" class="btn btn-default">
+                </div>
+				<div data-ng-show="error" class="text-danger">
+					<strong data-ng-bind="error"></strong>
+				</div>
+            </fieldset>
+        </form>
+    </div>
+</section>
