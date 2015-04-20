@@ -4,8 +4,8 @@
 angular.module('articles').run(['Menus',
 	function(Menus) {
 		// Uncomment to add articles example
-		Menus.addMenuItem('topbar', 'Articles', 'articles', 'dropdown', '/articles(/create)?');
-		Menus.addSubMenuItem('topbar', 'articles', 'List Articles', 'articles');
-		Menus.addSubMenuItem('topbar', 'articles', 'New Article', 'articles/create');
+		Menus.addMenuItem('topbar', 'Forums', 'articles', 'dropdown', '/articles(/create)?', false);
+		Menus.addSubMenuItem('topbar', 'articles', 'List Forums', 'articles');
+		Menus.addSubMenuItem('topbar', 'articles', 'New Forum', 'articles/create');
 	}
 ]);
