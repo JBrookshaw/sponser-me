@@ -1,0 +1,11 @@
+<section data-ng-controller="SettingsController">
+<h1>Search Users</h1>
+    Search: <input ng-model="query">
+
+    <ul>
+        <li ng-repeat="user in listUsers | filter:query">
+            {{user.firstName}}&nbsp;{{user.lastName}}
+        </li>
+    </ul>
+    {{listUsers[0].firstName}}
+</section>
