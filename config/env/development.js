@@ -6,8 +6,8 @@ module.exports = {
 		title: 'Champion'
 	},
 	facebook: {
-		clientID: process.env.FACEBOOK_ID || 'APP_ID',
-		clientSecret: process.env.FACEBOOK_SECRET || 'APP_SECRET',
+		clientID: process.env.FACEBOOK_ID || '641093616025448',
+		clientSecret: process.env.FACEBOOK_SECRET || '9ca5ab22e32c1a14eecfe9597c4f178d',
 		callbackURL: '/auth/facebook/callback'
 	},
 	twitter: {

@@ -8,6 +8,11 @@ angular.module('users').controller('SettingsController', ['$scope', '$http', '$l
 		// If user is not signed in then redirect back home
 		if (!$scope.user) $location.path('/');
 
+        //Used for clearing search filter
+        $('#search-icon').click(function(){
+            $scope.query = undefined;
+        });
+
 		// Check if there are additional accounts 
 		$scope.hasConnectedAdditionalSocialAccounts = function(provider) {
 			for (var i in $scope.user.additionalProvidersData) {
@@ -70,5 +75,12 @@ angular.module('users').controller('SettingsController', ['$scope', '$http', '$l
 		};
 
         $scope.listUsers = Users.query();
+
+
+
 	}
+
+
 ]);
+
+

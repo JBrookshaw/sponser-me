@@ -21,6 +21,55 @@ body
 {
     font-family: 'Open Sans', sans-serif;
 }
+.navbar-toggle{
+    margin-right:50px;
+}
+#search-bar{
+    position:fixed;
+    top:50px;
+    right:0px;
+    width:250px;
+    background-color: whitesmoke;
+    padding:0 20px 20px 20px;
+    max-height:400px;
+    overflow-y:scroll;
+}
+
+#search-bar ul {
+    padding:0 !important;
+    list-style: none;
+
+
+}
+
+#search-bar ul li {
+    display:block;
+    border-bottom: 1px solid black;
+    padding:5px;
+    cursor: pointer;
+    width:100%;
+
+}
+
+#search-bar ul li:hover {
+    background-color: #ccc;
+}
+
+#search-icon {
+    position: fixed;
+    top:17px;
+    right:15px;
+    z-index:99999;
+    margin:0;
+    padding:0;
+    color: white;
+    cursor: pointer;
+    opacity:.5;
+}
+
+#search-icon:hover {
+    opacity:1;
+}
 
 .fb-profile img.fb-image-lg{
     z-index: 0;

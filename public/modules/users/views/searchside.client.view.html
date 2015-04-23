@@ -1,11 +1,9 @@
-<section data-ng-controller="SettingsController">
-<h1>Search Users</h1>
-    Search: <input ng-model="query">
+<section id="search-bar" data-ng-controller="SettingsController">
+    Search: <input id="search-query" ng-model="query">
 
-    <ul>
+    <ul ng-show="query">
         <li ng-repeat="user in listUsers | filter:query">
             {{user.firstName}}&nbsp;{{user.lastName}}
         </li>
     </ul>
-    {{listUsers[0].firstName}}
 </section>
