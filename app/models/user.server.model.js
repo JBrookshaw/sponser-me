@@ -54,7 +54,21 @@ var UserSchema = new Schema({
 		required: 'Please fill in a username',
 		trim: true
 	},
-
+    picture:{
+        type: String,
+        trim: true,
+        default:''
+    },
+    university:{
+        type: String,
+        trim: true,
+        default:''
+    },
+    balance:{
+        type: Number,
+        trim: true,
+        default: 0
+    },
     description:{
         type: String,
         trim: true,
@@ -81,6 +95,13 @@ var UserSchema = new Schema({
 		}],
 		default: ['user']
 	},
+    userType: {
+        type: [{
+            type: String,
+            enum: ['student', 'sponsor']
+        }],
+        default: ['student']
+    },
 	updated: {
 		type: Date
 	},

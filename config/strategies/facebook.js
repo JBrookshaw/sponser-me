@@ -30,6 +30,7 @@ module.exports = function() {
 				displayName: profile.displayName,
 				email: profile.emails[0].value,
 				username: profile.username,
+                picture: profile.picture,
 				provider: 'facebook',
 				providerIdentifierField: 'id',
 				providerData: providerData
