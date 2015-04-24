@@ -41,6 +41,18 @@ body
     display:none;
 }
 
+.university-input ul {
+    list-style:none;
+    padding-left:10px !important;
+    margin:0;
+    width:350px;
+}
+.university-input ul li{
+    padding-left:0 !important;
+}
+.university-input ul li:hover{
+    background-color:#ccc;
+}
 #search-bar ul {
     padding:0 !important;
     list-style: none;

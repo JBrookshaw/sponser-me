@@ -4,13 +4,17 @@ angular.module('users').controller('SettingsController', ['$scope', '$http', '$l
 	function($scope, $http, $location, Users, Authentication) {
 		$scope.user = Authentication.user;
         $scope.authentication = Authentication;
-
+        $scope.showUniversity = true;
 		// If user is not signed in then redirect back home
 		if (!$scope.user) $location.path('/');
 
         //Used for clearing search filter
         $('#search-icon').click(function(){
             $scope.query = undefined;
+        });
+
+        $('#university').click(function(){
+            $scope.showUniversity = true;
         });
 
 		// Check if there are additional accounts 
@@ -73,6 +77,11 @@ angular.module('users').controller('SettingsController', ['$scope', '$http', '$l
 				$scope.error = response.message;
 			});
 		};
+
+        $scope.setUniversity = function(university){
+            $scope.user.university = university.Name;
+            $scope.showUniversity = false;
+        }
 
         $scope.listUsers = Users.query();
 
@@ -576,9 +585,9 @@ angular.module('users').controller('SettingsController', ['$scope', '$http', '$l
             {"Name":"Troy University-Montgomery Campus","Address":"231 Montgomery Street, Montgomery, Alabama 36103-4419","Website":"www.troy.edu/locations/montgomery-campus.html","Type":"4-year, Public","Awards offered":"Associate's degree|Bachelor's degree|Master's degree|Post-master's certificate","Campus setting":"","Campus housing":"No","Student population":null,"Undergraduate students":null,"Graduation Rate":"NA","Transfer-Out Rate":"NA","Cohort Year *":"Fall 2013","Net Price **":"NA","Largest Program":"-","IPEDS ID":10236802,"OPE ID":104755},
             {"Name":"Troy University-Phenix City Campus","Address":"1 University Place, Phenix City, Alabama 36869-4419","Website":"www.troy.edu/locations/phenix-city-campus.html","Type":"4-year, Public","Awards offered":"Bachelor's degree|Master's degree|Post-master's certificate|Doctor's degree - professional practice","Campus setting":"","Campus housing":"No","Student population":null,"Undergraduate students":null,"Graduation Rate":"NA","Transfer-Out Rate":"NA","Cohort Year *":"Fall 2013","Net Price **":"NA","Largest Program":"-","IPEDS ID":10236801,"OPE ID":104703},
             {"Name":"Truman State University","Address":"100 E Normal, Kirksville, Missouri 63501-4221","Website":"www.truman.edu","Type":"4-year, Public","Awards offered":"Bachelor's degree|Postbaccalaureate certificate|Master's degree","Campus setting":"Town: Remote","Campus housing":"Yes","Student population":6225,"Undergraduate students":5898,"Graduation Rate":"72%","Transfer-Out Rate":"NA","Cohort Year *":"Fall 2007","Net Price **":"$13,060 ","Largest Program":"-","IPEDS ID":178615,"OPE ID":249500},
-            {"Name":"","Address":"* Cohort Year represents the year for which students began their studies and applies to Graduation and Transfer Out Rates.","Website":"","Type":"","Awards offered":"","Campus setting":"","Campus housing":"","Student population":null,"Undergraduate students":null,"Graduation Rate":"","Transfer-Out Rate":"","Cohort Year *":"","Net Price **":"","Largest Program":"","IPEDS ID":null,"OPE ID":null},
-            {"Name":"","Address":"** Net Price is Average Net Price for 2012-2013 generated for full-time beginning undergraduate students who were awarded grant or scholarship aid from federal, state or local governments, or the institution. For public institutions only students paying the in-state or in-district rate are included.  For institutions that charge students by program, net price is generated for the institutionâ€™s largest program.","Website":"","Type":"","Awards offered":"","Campus setting":"","Campus housing":"","Student population":null,"Undergraduate students":null,"Graduation Rate":"","Transfer-Out Rate":"","Cohort Year *":"","Net Price **":"","Largest Program":"","IPEDS ID":null,"OPE ID":null},
-            {"Name":"","Address":"NA (Not applicable) - Graduation rate, transfer-out rate and the net price are not applicable to institutions that do not have full-time, first-time degree-seeking undergraduate students in the applicable cohort year or the financial aid year.","Website":"","Type":"","Awards offered":"","Campus setting":"","Campus housing":"","Student population":null,"Undergraduate students":null,"Graduation Rate":"","Transfer-Out Rate":"","Cohort Year *":"","Net Price **":"","Largest Program":"","IPEDS ID":null,"OPE ID":null}]
+            {"Name":"Winona State University","Address":"* Cohort Year represents the year for which students began their studies and applies to Graduation and Transfer Out Rates.","Website":"","Type":"","Awards offered":"","Campus setting":"","Campus housing":"","Student population":null,"Undergraduate students":null,"Graduation Rate":"","Transfer-Out Rate":"","Cohort Year *":"","Net Price **":"","Largest Program":"","IPEDS ID":null,"OPE ID":null},
+            {"Name":"Winona Tech","Address":"** Net Price is Average Net Price for 2012-2013 generated for full-time beginning undergraduate students who were awarded grant or scholarship aid from federal, state or local governments, or the institution. For public institutions only students paying the in-state or in-district rate are included.  For institutions that charge students by program, net price is generated for the institutionâ€™s largest program.","Website":"","Type":"","Awards offered":"","Campus setting":"","Campus housing":"","Student population":null,"Undergraduate students":null,"Graduation Rate":"","Transfer-Out Rate":"","Cohort Year *":"","Net Price **":"","Largest Program":"","IPEDS ID":null,"OPE ID":null},
+            {"Name":"St. Marys Winona","Address":"NA (Not applicable) - Graduation rate, transfer-out rate and the net price are not applicable to institutions that do not have full-time, first-time degree-seeking undergraduate students in the applicable cohort year or the financial aid year.","Website":"","Type":"","Awards offered":"","Campus setting":"","Campus housing":"","Student population":null,"Undergraduate students":null,"Graduation Rate":"","Transfer-Out Rate":"","Cohort Year *":"","Net Price **":"","Largest Program":"","IPEDS ID":null,"OPE ID":null}]
 
 	}
 

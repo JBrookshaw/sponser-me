@@ -19,6 +19,14 @@
 					<label for="username">Username</label>
 					<input type="text" id="username" name="username" class="form-control" data-ng-model="user.username" placeholder="Username">
 				</div>
+				<div class="form-group university-input">
+					<label for="university">University</label>
+					<input type="text" id="university" name="university" class="form-control" data-ng-model="user.university" placeholder="University">
+					<ul ng-show="user.university && showUniversity">
+						<li ng-show="$('.university-input ul li').text() != user.university" ng-click="setUniversity(university)" ng-repeat="university in universityList | filter:user.university
+						| limitTo:7">{{university.Name}}</li>
+					</ul>
+				</div>
                 <div class="form-group">
                     <label for="description">Description</label>
                     <textarea rows="5" cols="50" id="description" name="username" class="form-control" data-ng-model="user.description" placeholder="Description">
