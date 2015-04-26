@@ -3,6 +3,8 @@
 angular.module('articles').controller('ArticlesController', ['$scope', '$stateParams', '$location', 'Authentication', 'Articles',
 	function($scope, $stateParams, $location, Authentication, Articles) {
 		$scope.authentication = Authentication;
+        $scope.names = ['student','sponsor'];
+        $scope.my = { favorite: 'sponsor' };
 
 		$scope.create = function() {
 			var article = new Articles({
@@ -45,8 +47,11 @@ angular.module('articles').controller('ArticlesController', ['$scope', '$statePa
 			});
 		};
 
+
+
 		$scope.find = function() {
 			$scope.articles = Articles.query();
+
 		};
 
 		$scope.findOne = function() {
@@ -54,5 +59,6 @@ angular.module('articles').controller('ArticlesController', ['$scope', '$statePa
 				articleId: $stateParams.articleId
 			});
 		};
+
 	}
 ]);
