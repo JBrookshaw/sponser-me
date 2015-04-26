@@ -5,22 +5,11 @@
     <div class="col-md-12">
         <form class="form-horizontal" data-ng-submit="create()" novalidate>
             <fieldset>
-                <div class="form-group">
-                    <label class="control-label" for="name">Title</label>
-                    <div class="controls">
-                        <h4 data-ng-model="name" id="name">{{message.name}}</h4>
-                    </div>
-                </div>
-                <div class="form-group">
+
+                <div class="form-group"style="margin-left: -1000px;">
                     <label class="control-label" for="originId">Reply to</label>
                     <div class="controls">
                         <h3 data-ng-model="originId" id="originId">{{message._id}}</h3>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="control-label" for="desuser">Destination User</label>
-                    <div class="controls">
-                        <h6 data-ng-model="desuser" id="desuser">{{message.user.displayName}}</h6>
                     </div>
                 </div>
                 <!-- eric -->
