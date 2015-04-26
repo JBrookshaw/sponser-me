@@ -1,0 +1,19 @@
+<section>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <div class="container">
+        <div class="fb-profile">
+            <img id="viewPic" align="left" class="fb-image-lg" src="http://lorempixel.com/850/280/" alt="Profile image example"/>
+            <img id="viewPic2" align="left" class="fb-image-profile thumbnail" src="http://lorempixel.com/180/180/people" alt="Profile image example"/>
+            <div class="fb-profile-text">
+                <h1 data-ng-bind="userPage.displayName"></h1>
+                <p data-ng-bind="userPage.userType"></p>
+                <p data-ng-bind="userPage.university"></p>
+                <p data-ng-bind="userPage.description"></p>
+
+            </div>
+        </div>
+        <div id="sample_goal"></div>
+    </div>
+
+<h3 id="closeViewProfile" data-ng-click="closeViewProfile()" class="glyphicon glyphicon-remove"></h3>
+</section>

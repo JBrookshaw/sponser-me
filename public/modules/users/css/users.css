@@ -85,7 +85,26 @@ body
     cursor: pointer;
     opacity:.5;
 }
-
+#closeViewProfile{
+    position:absolute;
+    top:5px;
+    right:5px;
+    cursor:pointer;
+}
+.progressBar {
+    background-color: #0040D0 !important;
+}
+#viewProfile {
+    display:none;
+    background-color: white;
+    position:fixed;
+    top:100px;
+    left:10%;
+    z-index:9;
+    box-shadow: 10px 10px 5px #888888;
+    height:600px;
+    overflow-y:scroll;
+}
 #search-icon:hover {
     opacity:1;
 }

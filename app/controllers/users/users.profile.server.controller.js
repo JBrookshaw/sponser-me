@@ -49,6 +49,22 @@ exports.update = function(req, res) {
 };
 
 /**
+ * Show the current article
+ */
+exports.read = function(req, res) {
+	res.json(req.user);
+};
+
+exports.userByID = function(req, res, next, id) {
+	User.findById(id).exec(function(err, user) {
+		if (err) return next(err);
+		if (!user) return next(new Error('Failed to load user ' + id));
+		req.user = user;
+		next();
+	});
+};
+
+/**
  * Send User
  */
 exports.me = function(req, res) {
