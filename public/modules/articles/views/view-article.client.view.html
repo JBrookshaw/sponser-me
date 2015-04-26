@@ -1,4 +1,4 @@
-<section data-ng-controller="ArticlesController" data-ng-init="findOne()" style="margin:20px;">
+<section data-ng-controller="ArticlesController" data-ng-init="findOne()"  style="margin:20px;">
 	<div class="page-header" style="padding-top: 20px;">
 		<h1 data-ng-bind="article.title"></h1>
 	</div>
@@ -18,9 +18,55 @@
 			<span data-ng-bind="article.user.displayName"></span>
 		</em>
 	</small>
-	<p class="lead" data-ng-bind="article.content"></p>
-    <a href="#!/articles/create" class="btn btn-large"><button class="btn btn-large"><i class="icon-pencil"></i> Reply</button></a>
-    <a href="#!/messages/create" class="btn btn-large"><button class="btn btn-large"><i class="icon-pencil"></i> Send Message</button></a>
-    <a href="#!/articles" class="btn btn-large" data-ng-click="remove();"><button class="btn btn-large" data-ng-click="remove();"><i class="icon-remove"></i> Delete</button></a>
-    <a href="#!/articles" class="btn btn-large"><button class="btn btn-large"><i class="icon-arrow-left"></i> Back</button></a>
+    <p class="lead" data-ng-bind="article.content"></p>
+
+
+    <!-- Here is where I am populating the replies to the forum post -->
+
+    <div class="list-group">
+        <a data-ng-repeat="article in (articles | filter:{originId:article._id})" data-ng-href="#!/articles/{{article._id}}" class="list-group-item">
+            <small class="list-group-item-text">
+                Posted on
+                <span data-ng-bind="article.created | date:'mediumDate'"></span>
+                by
+                <span data-ng-bind="article.user.displayName"></span>
+            </small>
+            <h4 class="list-group-item-heading" data-ng-bind="article.title"></h4>
+            <p class="list-group-item-text" data-ng-bind="article.content"></p>
+        </a>
+    </div>
+    <div class="alert alert-warning text-center" data-ng-if="articles.$resolved && !articles.length">
+        No articles yet, why don't you <a href="/#!/articles/create">create one</a>?
+    </div>
+
+
+
+
+    <!-- Below is where I am doing the reply stuff -->
+    <form class="form-horizontal" data-ng-submit="create()" novalidate style="margin-top: -50px;">
+        <fieldset>
+            <div class="form-group">
+                <div class="controls">
+                    <span data-ng-model="originId" id="originId" style="margin-left: -2000px;">{{article._id}}</span>
+                </div>
+            </div>
+            <!-- eric -->
+            <div class="form-group">
+            <div class="controls">
+                <textarea name="content" data-ng-model="content" id="content" class="form-control" cols="30" rows="10" placeholder="Message" style="margin-top: 20px;"></textarea>
+            </div>
+            </div>
+            <div class="form-group">
+                <input type="submit" class="btn btn-default">
+            </div>
+            <div data-ng-show="error" class="text-danger">
+                <strong data-ng-bind="error"></strong>
+            </div>
+        </fieldset>
+    </form>
+    <span style="float: right; padding-bottom: 15px;">
+        <a class="btn btn-default" data-ng-click="remove();">Delete</a>
+        <a href="#!/articles"><button class="btn btn-default">Back</button></a>
+    </span>
+
 </section>

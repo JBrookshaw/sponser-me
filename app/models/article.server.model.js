@@ -17,9 +17,15 @@ var ArticleSchema = new Schema({
 	title: {
 		type: String,
 		default: '',
-		trim: true,
-		required: 'Title cannot be blank'
+		trim: true
+		//required: 'Title cannot be blank'
 	},
+    originId: {
+        type: String,
+        default: 'reply',
+        required: 'Please fill originId originId',
+        trim: true
+    },
 	content: {
 		type: String,
 		default: '',

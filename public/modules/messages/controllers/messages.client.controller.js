@@ -12,7 +12,9 @@ angular.module('messages').controller('MessagesController', ['$scope', '$statePa
                 ///// eric
 				name: this.name,
                 content: this.content,
-                desuser: this.desuser
+                //desuser: $("#desuser").html(),
+                desuser: this.desuser,
+                originId: $("#originId").html()
 			});
 
 			// Redirect after save
@@ -25,6 +27,9 @@ angular.module('messages').controller('MessagesController', ['$scope', '$statePa
 				$scope.name = '';
                 $scope.content = '';
                 $scope.desuser = '';
+                $scope.originId = '';
+
+
 			}, function(errorResponse) {
 				$scope.error = errorResponse.data.message;
 			});
@@ -59,9 +64,7 @@ angular.module('messages').controller('MessagesController', ['$scope', '$statePa
 		};
 
 		// Find a list of Messages
-		$scope.find = function() {
 			$scope.messages = Messages.query();
-		};
 
 		// Find existing Message
 		$scope.findOne = function() {
