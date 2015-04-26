@@ -24,7 +24,7 @@ angular.module('users').controller('SettingsController', ['$scope','$stateParams
             //alert($scope.userPage.displayName)
             $('#viewProfile').css('display', 'block');
 
-            $('#viewPic').attr('src', "http://lorempixel.com/850/280/nature/"+Math.floor((Math.random() * 10) + 1));
+            $('#viewPic').attr('src', "http://lorempixel.com/850/280/animals/"+Math.floor((Math.random() * 10) + 1));
             $('#viewPic2').attr('src', "http://lorempixel.com/180/180/people/"+Math.floor((Math.random() * 10) + 1));
             $('#sample_goal').html("");
             $('#sample_goal').goalProgress({
@@ -34,7 +34,7 @@ angular.module('users').controller('SettingsController', ['$scope','$stateParams
                 textAfter: ' raised'
             });
         }
-
+        //$('.searchThumb').attr('src', "http://lorempixel.com/50/50/animals/"+Math.floor((Math.random() * 10) + 1));
 
 
 

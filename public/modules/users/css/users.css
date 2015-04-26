@@ -91,9 +91,11 @@ body
     right:5px;
     cursor:pointer;
 }
+
 .progressBar {
     background-color: #0040D0 !important;
 }
+
 #viewProfile {
     display:none;
     background-color: white;
@@ -105,6 +107,7 @@ body
     height:600px;
     overflow-y:scroll;
 }
+
 #search-icon:hover {
     opacity:1;
 }
