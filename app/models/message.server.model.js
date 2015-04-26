@@ -13,19 +13,25 @@ var MessageSchema = new Schema({
 	name: {
 		type: String,
 		default: '',
-		required: 'Please fill Message name',
+		//required: 'Please fill Message name',
 		trim: true
 	},
     desuser: {
         type: String,
         default: '',
-        required: 'Please fill Message name',
+        //required: 'Please fill desuser desuser',
+        trim: true
+    },
+    originId: {
+        type: String,
+        default: '',
+        //required: 'Please fill originId originId',
         trim: true
     },
     content: {
         type: String,
         default: '',
-        required: 'Please fill Message name',
+        required: 'Please fill message content',
         trim: true
     },
 	created: {

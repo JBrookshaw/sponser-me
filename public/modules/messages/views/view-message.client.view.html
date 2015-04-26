@@ -1,4 +1,5 @@
-<section data-ng-controller="MessagesController" data-ng-init="findOne()" style="margin:20px;">
+<section data-ng-controller="MessagesController" data-ng-init="findOne()" data-ng-init="find()" style="margin:20px;">
+    <div id="messageBorder" style="border: 1px;"></div>
 	<div class="page-header" style="padding-top: 20px;">
 		<h1 data-ng-bind="message.name"></h1>
         From : <a data-ng-bind="message.user.displayName"></a><br />
@@ -13,12 +14,43 @@
 		</em>
 
 	</small>
-    <a class="btn btn-primary" data-ng-click="remove();">
+
+
+    <!--<a class="btn btn-primary" data-ng-click="remove();">
         <i class="glyphicon glyphicon-trash"></i>
-    </a>
+    </a>-->
+
+    <div class="list-group" style="padding-top: 20px;">
+    <li data-ng-repeat="reply in (messages | filter:{originId: message._id})" class="list-group-item" style="padding-bottom: 20px">
+
+        <!-- This is where I am going to put user information for message -->
+        <span style="padding-right: 20px;">
+            <section data-ng-controller="SettingsController" data-ng-init="findOne()" data-ng-init="find()">
+                {{user.email}}<br>
+                {{user.firstName}}<br>
+                {{user.lastName}}
+            </section>
+
+
+        </span>
+        <h6 class="list-group-item-text" data-ng-bind="reply.content"></h6>
+        <small style="float: right;" class="list-group-item-text">
+            Posted on
+            <span data-ng-bind="reply.created | date:'medium'"></span>
+            by
+
+            <span data-ng-bind="reply.user.email"></span>
+        </small>
+    </li>
+</div>
+
     <span style="float:right">
-    <a href="#!/messages/create" class="btn btn-large"><button class="btn btn-large"><i class="icon-pencil"></i> Reply</button></a>
+    <a href="#!/messages/{{message._id}}/reply" class="btn btn-large"><button class="btn btn-large"><i class="icon-pencil"></i> Reply</button></a>
     <a href="#!/messages" class="btn btn-large" data-ng-click="remove();"><button class="btn btn-large" data-ng-click="remove();"><i class="icon-remove"></i> Delete</button></a>
     <a href="#!/messages" class="btn btn-large"><button class="btn btn-large"><i class="icon-arrow-left"></i> Back</button></a>
     </span>
+</section>
+
+<section data-ng-controller="SettingsController" data-ng-init="findOne()" data-ng-init="find()" style="margin:20px;">
+    {{user.email}}
 </section>
