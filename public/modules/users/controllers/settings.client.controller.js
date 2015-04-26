@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('users').controller('SettingsController', ['$scope', '$http', '$location', 'Users', 'Authentication',
-	function($scope, $http, $location, Users, Authentication) {
+angular.module('users').controller('SettingsController', ['$scope','$stateParams', '$http', '$location', 'Users', 'Authentication',
+	function($scope, $stateParams, $http, $location, Users, Authentication) {
 		$scope.user = Authentication.user;
         $scope.authentication = Authentication;
         $scope.showUniversity = true;
@@ -16,6 +16,31 @@ angular.module('users').controller('SettingsController', ['$scope', '$http', '$l
         $('#university').click(function(){
             $scope.showUniversity = true;
         });
+        $scope.userPage = $scope.user;
+        var onlyOnce = true;
+        $scope.setUserPage = function(user){
+
+            $scope.userPage = user;
+            //alert($scope.userPage.displayName)
+            $('#viewProfile').css('display', 'block');
+
+            $('#viewPic').attr('src', "http://lorempixel.com/850/280/animals/"+Math.floor((Math.random() * 10) + 1));
+            $('#viewPic2').attr('src', "http://lorempixel.com/180/180/people/"+Math.floor((Math.random() * 10) + 1));
+            $('#sample_goal').html("");
+            $('#sample_goal').goalProgress({
+                goalAmount: 1000,
+                currentAmount: 100,
+                textBefore: '$',
+                textAfter: ' raised'
+            });
+        }
+        //$('.searchThumb').attr('src', "http://lorempixel.com/50/50/animals/"+Math.floor((Math.random() * 10) + 1));
+
+
+
+        $scope.closeViewProfile = function(){
+            $('#viewProfile').css('display', 'none');
+        }
 
 		// Check if there are additional accounts 
 		$scope.hasConnectedAdditionalSocialAccounts = function(provider) {
@@ -82,6 +107,12 @@ angular.module('users').controller('SettingsController', ['$scope', '$http', '$l
             $scope.user.university = university.Name;
             $scope.showUniversity = false;
         }
+
+        $scope.findOne = function() {
+            $scope.tempUser = Users.get({
+                userId: $stateParams.userId
+            });
+        };
 
         $scope.listUsers = Users.query();
 

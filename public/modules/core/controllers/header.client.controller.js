@@ -27,6 +27,11 @@ angular.module('core').controller('HeaderController', ['$scope', 'Authentication
                 $('#search-query').val("");
             }
 
+			var list = $('#search-bar img');
+
+			for(var i =0; i < list.length; i++){
+				list[i].src = "http://lorempixel.com/50/50/people/"+Math.floor((Math.random() * 10) + 1);
+			}
 
             //});
 

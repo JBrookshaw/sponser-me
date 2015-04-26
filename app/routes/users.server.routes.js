@@ -21,6 +21,15 @@ module.exports = function(app) {
 	app.route('/auth/reset/:token').get(users.validateResetToken);
 	app.route('/auth/reset/:token').post(users.reset);
 
+	app.route('/auth/signout').get(users.signout);
+
+	//app.route('/user/:userId')
+	//	.get(users.read);
+    //
+    //
+	//// Finish by binding the article middleware
+	//app.param('userId', users.userByID);
+
 	// Setting up the users authentication api
 	app.route('/auth/signup').post(users.signup);
 	app.route('/auth/signin').post(users.signin);

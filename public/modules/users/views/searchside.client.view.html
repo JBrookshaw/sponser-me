@@ -1,9 +1,10 @@
-<section id="search-bar"  data-ng-controller="SettingsController">
+<div id="search-bar"  data-ng-controller="SettingsController">
     Search: <input id="search-query" ng-model="query">
     <ul ng-show="query">
-        <li ng-repeat="user in listUsers | filter:query">
-            <img class="searchThumb" src="http://lorempixel.com/50/50/people/" height="50" width="50">
+        <li ng-repeat="user in listUsers | filter:query" data-ng-click="setUserPage(user)">
+            <img class="searchThumb"  src="http://lorempixel.com/50/50/people/" height="50" width="50">
             <h5 style="float:left">{{user.firstName}}&nbsp;{{user.lastName}}</h5>
         </li>
     </ul>
+    <div id="viewProfile" data-ng-include="'/modules/users/views/settings/view-profile.client.view.html'"></div>
 </section>
