@@ -27,6 +27,13 @@
 						| limitTo:7">{{university.Name}}</li>
 					</ul>
 				</div>
+				<div class="form-group">
+					<label for="type">User Type:</label>
+					<select type="text" id="type" name="type" class="form-control" data-ng-model="user.userType" placeholder="Student">
+						<option>student</option>
+						<option>sponsor</option>
+					</select>
+				</div>
                 <div class="form-group">
                     <label for="description">Description</label>
                     <textarea rows="5" cols="50" id="description" name="username" class="form-control" data-ng-model="user.description" placeholder="Description">
