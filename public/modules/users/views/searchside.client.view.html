@@ -1,4 +1,4 @@
-<div id="search-bar"  data-ng-controller="SettingsController">
+<section id="search-bar"  data-ng-controller="SettingsController">
     Search: <input id="search-query" ng-model="query">
     <ul ng-show="query">
         <li ng-repeat="user in listUsers | filter:query" data-ng-click="setUserPage(user)">
