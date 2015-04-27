@@ -15,6 +15,7 @@ module.exports = {
 			css: [
 				'public/lib/bootstrap/dist/css/bootstrap.css',
 				'public/lib/bootstrap/dist/css/bootstrap-theme.css',
+				'public/lib/goalProgress/goalProgress.css'
 			],
 			js: [
                 'public/lib/jquery/dist/jquery.min.js',
@@ -29,7 +30,9 @@ module.exports = {
 				'public/lib/angular-bootstrap/ui-bootstrap-tpls.js',
                 'public/modules/core/js/classie.js',
                 'public/modules/core/js/modernizer.custom.js',
-                'public/modules/core/js/uisearch.js'
+                'public/modules/core/js/uisearch.js',
+				'public/lib/goalProgress/goalProgress.min.js',
+
 			]
 		},
 		css: [
