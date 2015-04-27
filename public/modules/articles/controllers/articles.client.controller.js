@@ -9,7 +9,8 @@ angular.module('articles').controller('ArticlesController', ['$scope', '$statePa
 		$scope.create = function() {
 			var article = new Articles({
 				title: this.title,
-				content: this.content
+				content: this.content,
+                originId: $("#originId").html()
 			});
 			article.$save(function(response) {
 				$location.path('articles/' + response._id);
@@ -49,10 +50,10 @@ angular.module('articles').controller('ArticlesController', ['$scope', '$statePa
 
 
 
-		$scope.find = function() {
+
 			$scope.articles = Articles.query();
 
-		};
+
 
 		$scope.findOne = function() {
 			$scope.article = Articles.get({

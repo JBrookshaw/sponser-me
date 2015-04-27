@@ -16,7 +16,7 @@
     </form>
 	<div class="list-group item">
 
-            <a data-ng-repeat="article in (articles | filter: {user: my.favorite })" data-ng-href="#!/articles/{{article._id}}" class="list-group-item">
+            <a data-ng-repeat="article in (articles | filter: {user: my.favorite, originId:'reply' })" data-ng-href="#!/articles/{{article._id}}" class="list-group-item">
                 <small class="list-group-item-text" >
                     Posted on
                     <span data-ng-bind="article.created | date:'mediumDate'"></span>

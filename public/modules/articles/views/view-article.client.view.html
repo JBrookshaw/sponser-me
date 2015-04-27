@@ -24,15 +24,30 @@
     <!-- Here is where I am populating the replies to the forum post -->
 
     <div class="list-group">
-        <a data-ng-repeat="article in (articles | filter:{originId:article._id})" data-ng-href="#!/articles/{{article._id}}" class="list-group-item">
-            <small class="list-group-item-text">
+        <a data-ng-repeat="article in (articles | filter:{originId:article._id})" data-ng-href="#!/articles/{{article._id}}" class="list-group-item" style="height:200px; padding-bottom: 20px;">
+
+            <!-- This is where I am going to put user information for message -->
+        <span style="padding-right: 20px;">
+
+            <section data-ng-controller="SettingsController" data-ng-init="findOne()" data-ng-init="find()" style=" padding-right:10px;float:left; border-right:5px solid #000;">
+                <img src="https://crowdfunded.micropasts.org/assets/anonymous-user-e318d6024fec5bf6fe5a002001e88a75.png" height="100px" width="100px" /><br />
+                {{reply.user.displayName}}<br>
+                Winona State University<br>
+                Balance: ${{user.balance}}
+
+            </section>
+
+
+        </span>
+
+            <h4 class="list-group-item-heading" data-ng-bind="article.title"></h4>
+            <p class="list-group-item-text" data-ng-bind="article.content" style="margin-left: 200px;"></p>
+            <small class="list-group-item-text" style="position: absolute; right: 15px; bottom: 15px;">
                 Posted on
                 <span data-ng-bind="article.created | date:'mediumDate'"></span>
                 by
                 <span data-ng-bind="article.user.displayName"></span>
             </small>
-            <h4 class="list-group-item-heading" data-ng-bind="article.title"></h4>
-            <p class="list-group-item-text" data-ng-bind="article.content"></p>
         </a>
     </div>
     <div class="alert alert-warning text-center" data-ng-if="articles.$resolved && !articles.length">
