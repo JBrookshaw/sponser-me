@@ -24,7 +24,7 @@ var MessageSchema = new Schema({
     },
     originId: {
         type: String,
-        default: '',
+        default: 'origin',
         //required: 'Please fill originId originId',
         trim: true
     },

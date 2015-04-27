@@ -25,11 +25,12 @@
 
         <!-- This is where I am going to put user information for message -->
         <span style="padding-right: 20px;">
+
             <section data-ng-controller="SettingsController" data-ng-init="findOne()" data-ng-init="find()" style=" padding-right:10px;float:left; border-right:5px solid #000;">
                 <img src="https://crowdfunded.micropasts.org/assets/anonymous-user-e318d6024fec5bf6fe5a002001e88a75.png" height="100px" width="100px" /><br />
-                {{user.displayName}}<br>
-                {{user.email}}<br>
-                {{user.type}}<br>
+                {{reply.user.displayName}}<br>
+                {{reply.user.email}}<br>
+                {{reply.user.userType}}<br>
                 Balance: ${{user.balance}}
 
             </section>
